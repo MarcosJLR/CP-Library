@@ -7,7 +7,7 @@
   <summary>Click to expand!</summary>
 
    - Convex Hull Trick
-      - Aqui va un problema :+1: :-1: :-1:
+      - [The Fair Nut And Rectangles](https://codeforces.com/contest/1083/problem/E) :+1: :-1: :-1:
    - D&C
    - Knuth Optimization
 </details>
