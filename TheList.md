@@ -8,6 +8,7 @@
 
    - Convex Hull Trick
       - [The Fair Nut And Rectangles](https://codeforces.com/contest/1083/problem/E) :+1: :-1: :-1:
+      - [Covered Walkway](https://open.kattis.com/problems/coveredwalkway) :+1: :-1: :-1:
    - D&C
    - Knuth Optimization
 </details>
