@@ -79,7 +79,7 @@
    - Suffix Array
    - Suffix Automata
    - Trie
-	- [XOR Sum](https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&Itemid=9) :-1: :-1: :+1:
+	 - [XOR Sum](https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&Itemid=9) :-1: :-1: :+1:
    - Z-Function
 </details>
 
