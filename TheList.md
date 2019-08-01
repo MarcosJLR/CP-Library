@@ -14,6 +14,7 @@
       - [Squared Ends](https://csacademy.com/contest/archive/task/squared-ends) :+1: :-1: :-1: 
    - D&C
    - Knuth Optimization
+      - [Breaking String](https://www.spoj.com/problems/BRKSTRNG/) :+1: :-1: :-1:
 </details>
 
 ### Number Theory (Like, everything. Hay que buscar una sublista de esto)
