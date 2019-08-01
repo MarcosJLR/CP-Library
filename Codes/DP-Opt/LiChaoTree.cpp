@@ -14,7 +14,7 @@ T f(pt l, T x) { return dot(l, {x, 1}); }
 const int MAXQ = 2e5+5;
 
 // Init en {0, INF}
-pt LCT[4*MAXN];
+pt LCT[4*MAXQ];
 void add(pt nw, int id = 1, int l = 0, int r = MAXQ){
     int m = (l + r)>>1, L = id<<1, R = L|1;
     bool lef = f(nw, l) < f(LCT[id], l);
