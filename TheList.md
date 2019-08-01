@@ -9,6 +9,7 @@
    - Convex Hull Trick
       - [The Fair Nut And Rectangles](https://codeforces.com/contest/1083/problem/E) :+1: :-1: :-1:
       - [Covered Walkway](https://open.kattis.com/problems/coveredwalkway) :+1: :-1: :-1:
+      - [Escape Through Leaf](https://codeforces.com/contest/932/problem/F) :+1: :-1: :-1:
    - Li Chao Tree
       - [Squared Ends](https://csacademy.com/contest/archive/task/squared-ends) :+1: :-1: :-1: 
    - D&C
