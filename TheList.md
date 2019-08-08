@@ -89,8 +89,8 @@
    - Suffix Array
    - Suffix Automata
    - Trie
-	 - [XOR Sum](https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=2683) :-1: :-1: :+1:
-	 - [A Lot of Games](https://codeforces.com/contest/456/problem/D) :-1: :-1: :+1: 
+	    - [XOR Sum](https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=2683) :-1: :-1: :+1:
+	    - [A Lot of Games](https://codeforces.com/contest/456/problem/D) :-1: :-1: :+1: 
    - Z-Function
 </details>
 
@@ -107,4 +107,8 @@
   - NP-Problems
   - Greedy Problems
   - Matrix Exponentiation (Para mejorar recursiones)
+     - [Classic Sequence Sum (hint: draw fibo rectangles)](https://www.spoj.com/problems/CLASSICSEQ/) :-1: :+1: :-1:
+     - [Ada and Economy](https://www.spoj.com/problems/ADAMONEY/) :-1: :+1: :-1:
+     - [Dojo Corridor 1](https://www.spoj.com/problems/DOJ1/) :-1: :+1: :-1:
+     - [Macarons](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=5208) :-1: :+1: :-1:
 </details>
