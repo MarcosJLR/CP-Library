@@ -89,7 +89,7 @@
    - Suffix Array
    - Suffix Automata
    - Trie
-	    - [XOR Sum](https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=2683) :-1: :-1: :+1:
+	    - [XOR Sum](https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=2683) :-1: :+1: :+1:
 	    - [A Lot of Games](https://codeforces.com/contest/456/problem/D) :-1: :-1: :+1: 
    - Z-Function
 </details>
