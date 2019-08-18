@@ -22,7 +22,7 @@
 ### Combinatorics and Counting
 <details>
 
-   - [Beatiful Pairs of Numbers](https://codeforces.com/contest/403/problem/D) :+1: :-1: :-1:
+   - [Beatiful Pairs of Numbers](https://codeforces.com/contest/403/problem/D) :+1: :+1: :-1:
 
 </details>
 
