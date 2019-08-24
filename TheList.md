@@ -18,6 +18,12 @@
 </details>
 
 ### Number Theory (Like, everything. Hay que buscar una sublista de esto)
+<details>
+	
+   - Chinese Remainder Theorem
+      - [Remainders Game](https://codeforces.com/problemset/problem/687/B) :-1: :+1: :-1:
+      
+</details>
 
 ### Combinatorics and Counting
 <details>
