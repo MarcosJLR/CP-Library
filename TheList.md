@@ -18,11 +18,17 @@
 </details>
 
 ### Number Theory (Like, everything. Hay que buscar una sublista de esto)
+<details>
+	
+   - Chinese Remainder Theorem
+      - [Remainders Game](https://codeforces.com/problemset/problem/687/B) :-1: :+1: :-1:
+      
+</details>
 
 ### Combinatorics and Counting
 <details>
 
-   - [Beatiful Pairs of Numbers](https://codeforces.com/contest/403/problem/D) :+1: :-1: :-1:
+   - [Beatiful Pairs of Numbers](https://codeforces.com/contest/403/problem/D) :+1: :+1: :-1:
 
 </details>
 
@@ -89,7 +95,7 @@
    - Suffix Array
    - Suffix Automata
    - Trie
-	    - [XOR Sum](https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=2683) :-1: :-1: :+1:
+	    - [XOR Sum](https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=2683) :-1: :+1: :+1:
 	    - [A Lot of Games](https://codeforces.com/contest/456/problem/D) :-1: :-1: :+1: 
    - Z-Function
 </details>

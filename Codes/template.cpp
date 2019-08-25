@@ -25,10 +25,10 @@ typedef vector<ii> vii;
 #define F first
 #define S second
 #define ri(a) scanf("%d",&a)
-#define rii(a,b) ri(a),ri(b);
-#define riii(a,b,c) rii(a,b),ri(c);
+#define rii(a,b) ri(a),ri(b)
+#define riii(a,b,c) rii(a,b),ri(c)
 #define lri(a) scanf("%lld",&a)
-#define lrii(a,b) lri(a),lri(b);
+#define lrii(a,b) lri(a),lri(b)
 #define ms(obj,val) memset(obj,val,sizeof(obj))
 #define all(x) x.begin(),x.end()
 #define debug true
