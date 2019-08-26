@@ -8,3 +8,4 @@
 ### Trie :-1: :+1: :+1:
 ### Sieve of Eratosthenes :+1: :-1: :-1:
 ### Rabin Miller :+1: :-1: :-1:
+### Pollard's Rho Factorization :+1: :-1: :-1:
