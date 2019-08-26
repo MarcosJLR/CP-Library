@@ -4,7 +4,7 @@ using u128 = __uint128_t;
 u64 binPow(u64 a, u64 b, u64 mod){
     if(b == 0) return 1;
     if(b&1) return (u128)a * binPow(a, b^1, mod) % mod;
-    return binPow((u128)a * a % mod, b>>1);
+    return binPow((u128)a * a % mod, b>>1, mod);
 }
 
 bool checkComp(u64 n, u64 a, u64 d, int s){
