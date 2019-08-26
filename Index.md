@@ -6,3 +6,5 @@
 ### Convex Hull Trick (Dynamic) :+1: :-1: :-1:
 ### Li Chao Tree :+1: :-1: :-1:
 ### Trie :-1: :+1: :+1:
+### Sieve of Eratosthenes :+1: :-1: :-1:
+### Rabin Miller :+1: :-1: :-1:

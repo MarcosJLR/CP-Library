@@ -20,6 +20,8 @@
 ### Number Theory (Like, everything. Hay que buscar una sublista de esto)
 <details>
 	
+   - Sieve of Eratosthenes
+      - [A conjecture of Paul Erdös](https://www.spoj.com/problems/HS08PAUL/) :+1: :-1: :-1:
    - Chinese Remainder Theorem
       - [Remainders Game](https://codeforces.com/problemset/problem/687/B) :-1: :+1: :-1:
       
