@@ -25,6 +25,7 @@
    - Chinese Remainder Theorem
       - [Remainders Game](https://codeforces.com/problemset/problem/687/B) :-1: :+1: :-1:
       - [Billiard](https://codeforces.com/contest/982/problem/E) :-1: :+1: :-1:
+      - [Number of Sequences](https://www.hackerrank.com/contests/w22/challenges/number-of-sequences) :-1: :+1: :-1:
       
 </details>
 
