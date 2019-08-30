@@ -96,6 +96,9 @@
 
    - KMP
    - Aho-Corasick
+	     - [String Set Queries](https://codeforces.com/problemset/problem/710/F) :-1: :-1: :+1:
+	     - [Frequency of String](https://codeforces.com/problemset/problem/963/D) :-1: :-1: :+1: 
+	     - [Prefix Lookup](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=2637) :-1: :-1: :+1:
    - Suffix Array
    - Suffix Automata
    - Trie
