@@ -9,3 +9,4 @@
 ### Sieve of Eratosthenes :+1: :-1: :-1:
 ### Rabin Miller :+1: :-1: :-1:
 ### Pollard's Rho Factorization :+1: :-1: :-1:
+### Aho-Corasick :-1: :-1: :+1:
