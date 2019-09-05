@@ -113,13 +113,16 @@
 <details>
   <summary>Click to expand!</summary>
  
-  - Binary Search
-  - Probabilities
-  - FFT
-  - Constructive Algorithms (esto es una seccion de CF)
-  - NP-Problems
-  - Greedy Problems
-  - Matrix Exponentiation (Para mejorar recursiones)
+   - Binary Search
+   - Probabilities
+   - FFT
+      - [K-Inversions](https://open.kattis.com/problems/kinversions) :+1: :-1: :-1:
+      - [Lightsabers (hard)](https://codeforces.com/problemset/problem/958/F3) :-1: :-1: :-1:
+      - [Dasha and Cyclic Table](https://codeforces.com/contest/754/problem/E) :-1: :-1: :-1:
+   - Constructive Algorithms (esto es una seccion de CF)
+   - NP-Problems
+   - Greedy Problems
+   - Matrix Exponentiation (Para mejorar recursiones)
      - [Classic Sequence Sum (hint: draw fibo rectangles)](https://www.spoj.com/problems/CLASSICSEQ/) :-1: :+1: :-1:
      - [Ada and Economy](https://www.spoj.com/problems/ADAMONEY/) :-1: :+1: :-1:
      - [Dojo Corridor 1](https://www.spoj.com/problems/DOJ1/) :-1: :+1: :-1:
