@@ -101,7 +101,7 @@
 		- [Prefix Lookup](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=2637) :-1: :-1: :+1:
    - Suffix Array
    - Suffix Automata
-i		- [Lexicographical Substring Search](https://www.spoj.com/problems/SUBLEX/) :-1: :-1: :+1:
+		- [Lexicographical Substring Search](https://www.spoj.com/problems/SUBLEX/) :-1: :-1: :+1:
 		- [Fake News (hard)](https://codeforces.com/contest/802/problem/I) :-1: :-1: :+1:
 		- [File Recover](https://onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=3343) :-1: :-1: :+1:
    - Trie
