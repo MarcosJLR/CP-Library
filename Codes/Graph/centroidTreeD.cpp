@@ -8,7 +8,7 @@ int centroid[MAXN];
 int sz[MAXN];
 void dfsSZ(int v, int p){
 	sz[v] = 1;
-	for(int u:G[v]) if(v!=p && !centroid[u]){
+	for(int u:G[v]) if(u!=p && !centroid[u]){
 		dfsSZ(u,v);
 		sz[v] += sz[u];
 	}
@@ -16,7 +16,7 @@ void dfsSZ(int v, int p){
 
 // Find the centroid of a tree
 int findCentroid(int v, int p, int n){
-	for(int u:G[v]) if(v!=p && !centroid[u] && sz[u]>n/2){
+	for(int u:G[v]) if(u!=p && !centroid[u] && sz[u]>n/2){
 		return findCentroid(u,v,n);
 	}
 	return v;
@@ -27,7 +27,7 @@ int h[MAXN]; // level of the node in the CTD. could be useful.
 // Calculate the CTD. O(nlogn)
 int buildCT(int v, int hv){
 
-	dfsSZ(v);
+	dfsSZ(v,-1);
 	int c = findCentroid(v, -1, sz[v]);
 
 	//here you can pre-calculate some data for the centroids. 
