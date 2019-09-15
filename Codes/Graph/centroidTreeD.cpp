@@ -1,6 +1,9 @@
 // Centroid Tree Decomposition
 // Run buildCT to build the cetroid tree
 
+vi G[MAXN];
+int centroid[MAXN];
+
 // Precalculate sizes of subtrees from some root.
 int sz[MAXN];
 void dfsSZ(int v, int p){
