@@ -69,6 +69,7 @@
       - LCA
       - HLD
     - Centroid Decomposition
+       - [Xenia and Tree](https://codeforces.com/contest/342/problem/E) :-1: :+1: :-1:
    - Dilworth's theorem
    - DSU
    - Conectividad

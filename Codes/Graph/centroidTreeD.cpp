@@ -33,7 +33,7 @@ int buildCT(int v, int hv){
 	//here you can pre-calculate some data for the centroids. 
 	centroid[c] = 1;
 	h[c] = hv;
-	if(!hv) p[c] = c;
+	if(!hv) p[c] = -1;
 
 	for(int u:G[c]) if(!centroid[u]){
 		int cu = buildCT(u, hv+1);
@@ -46,7 +46,7 @@ int buildCT(int v, int hv){
 // sample query
 void query(int v){
 	int u = v;
-	while(p[u]!=u){
+	while(u!=-1){
 		// update / do / calculate something
 		u = p[u];
 	}
