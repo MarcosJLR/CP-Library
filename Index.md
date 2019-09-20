@@ -12,3 +12,5 @@
 ### Aho-Corasick :-1: :-1: :+1:
 ### Suffix-Automaton :-1: :-1: :+1:
 ### Fast Fourier Transformate :+1: :-1: :-1:
+### KMP :-1: :-1: :+1:
+
