@@ -1,9 +1,5 @@
 // String matching KMP-Algorithm
 
-#define vector<int> vi;
-#define FOR(i,n,m) for(int i=0; i<(int)m; i++)
-#define push_back pb
-
 vi preff(string &s){
 	int n = s.length();
 	vi P(n);
