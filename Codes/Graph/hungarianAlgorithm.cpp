@@ -1,116 +1,61 @@
 // Hungarian Algorithm for assignment problem (min or max cost in a perfect bipartite matching)
-// O(n^3)
+// O(n^3)   for n==m
+// O(n^2*m) for rectangular problems, n<m
+// Note that for this implementation, it does not matter whether or not there are in the matrix a[][] negative numbers
+// For maximum match: a[i][j] *= -1; 
+// indexed from 1 to n.
+//
+// implementation by Andrei Lopatin.
 
-#define N 55 //max number of vertices in one part
-#define INF 100000000 //just infinity
-int cost[N][N]; //cost matrix
-int n, max_match; //n workers and n jobs
-int lx[N], ly[N]; //labels of X and Y parts
-int xy[N]; //xy[x] - vertex that is matched with x,
-int yx[N]; //yx[y] - vertex that is matched with y
-bool S[N], T[N]; //sets S and T in algorithm
-int slack[N]; //as in the algorithm description
-int slackx[N]; //slackx[y] such a vertex, that
-// l(slackx[y]) + l(y) - w(slackx[y],y) = slack[y]
-int prev[N]; //array for memorizing alternating paths
+// que pasa si no se puede hacer matching maximo? se jode todo? hay que usar min_cost_flow supongo 
 
-void init_labels(){
-	ms(lx,0);
-	ms(ly,0);
-	FOR(x,0,n) FOR(y,0,n)
-	lx[x] = max(lx[x], cost[x][y]);
-}
+int n,m;
+vector < int >  ans(MAXN); //ans( n + 1 ) ;
+int a[MAXN][MAXN]; //input matrix
 
-void update_labels(){
-	int delta = INF; //init delta as infinity
-	FOR(y,0,n) if(!T[y]) delta = min(delta, slack[y]); //calculate delta using slack
-	FOR(x,0,n) if (S[x]) lx[x] -= delta; //update X labels
-	FOR(y,0,n) if (T[y]) ly[y] += delta; //update Y labels
-	FOR(y,0,n) if (!T[y]) slack[y] -= delta; //update slack array
-}
-
-//x - current vertex,prevx - vertex from X before x in the alternating path,
-//so we add edges (prevx, xy[x]), (xy[x], x)
-void add_to_tree(int x, int prevx){
-	S[x] = true; //add x to S
-	prev[x] = prevx; //we need this when augmenting
-	FOR(y,0,n) //update slacks, because we add new vertex to S
-	if (lx[x] + ly[y] - cost[x][y] < slack[y]){
-		slack[y] = lx[x] + ly[y] - cost[x][y];
-		slackx[y] = x;
-	}
-}
-
-//main function of the algorithm
-void augment(){
-	if (max_match == n) return; //check wether matching is already perfect
-	int root; //just root vertex
-	int q[N], wr = 0, rd = 0; //q - queue for bfs, wr,rd - write and read
-	//pos in queue
-	ms(S,false); //init set S
-	ms(T,false); //init set T
-	ms(prev,-1); //init set prev - for the alternating tree
-	FOR(x,0,n) if (xy[x] == -1){ //finding root of the tree
-		q[wr++] = root = x;
-		prev[x] = -2;
-		S[x] = true;
-		break;
-	}
-	FOR(y,0,n){ //initializing slack array
-		slack[y] = lx[root] + ly[y] - cost[root][y];
-		slackx[y] = root;
-	}
-
-	while(true){
-		while (rd < wr){ //building tree with bfs cycle
-			x = q[rd++]; //current vertex from X part
-			FOR(y,0,n) if(cost[x][y] == lx[x] + ly[y] && !T[y]){ //iterate through all edges in equality graph
-				if(yx[y] == -1) break; //an exposed vertex in Y found, so augmenting path exists!
-				T[y] = true; //else just add y to T,
-				q[wr++] = yx[y]; //add vertex yx[y], which is matched with y, to the queue
-				add_to_tree(yx[y], x); //add edges (x,y) and (y,yx[y]) to the tree
-			}
-			if(y < n) break; //augmenting path found!
-		}
-		if(y < n) break; //augmenting path found!
-		update_labels(); //augmenting path not found, so improve labeling
-		wr = rd = 0;
-
-		//in this cycle we add edges that were added to the equality graph as a result of improving the labeling,
-		// we add edge (slackx[y], y) to the tree if and only if !T[y] && slack[y] == 0, 
-		//also with this edge we add another one (y, yx[y]) or augment the matching, if y was exposed
-		FOR(y,0,n)if(!T[y] && slack[y] == 0){
-			if(yx[y] == -1){ x = slackx[y]; break; } //exposed vertex in Y found - augmenting path exists!
-			else{
-				T[y] = true; //else just add y to T,
-				if(!S[yx[y]]){
-					q[wr++] = yx[y]; //add vertex yx[y], which is matched with y, to the queue
-					add_to_tree(yx[y], slackx[y]); //and add edges (x,y) and (y, yx[y]) to the tree
-				}
-			}
-		}
-		if(y < n) break; //augmenting path found!
-	}
-	if(y < n){ //we found augmenting path!
-		max_match++; //increment matching
-		for(int cx = x, cy = y, ty; cx != -2; cx = prev[cx], cy = ty){ //in this cycle we inverse edges along augmenting path
-			ty = xy[cx];
-			yx[cy] = cx;
-			xy[cx] = cy;
-		}
-		augment(); //recall function, go to step 1 of the algorithm
-	}
-}
-
-//driver function 
 int hungarian(){
-	int ret = 0; //weight of the optimal matching
-	max_match = 0; //number of vertices in current matching
-	ms(xy,-1);
-	ms(yx,-1);
-	init_labels(); //step 0
-	augment(); //steps 1-3
-	FOR(x,0,n) //forming answer there
-	ret += cost[x][xy[x]];
-	return ret;
+
+	// u and v are potentials (solution is a upper bound of sum of potentials)
+	vector < int > u ( n + 1 ) , v ( m + 1 ) , p ( m + 1 ) , way ( m + 1 ) ;
+
+	//main algorithm loop - O(n^3)/O(n^2*m)
+	for ( int i = 1 ; i <= n ; ++ i ) {
+		p [ 0 ] = i ;
+		int j0 = 0 ;
+		vector < int > minv ( m + 1 , INF ) ;
+		vector < char > used ( m + 1 , false ) ;
+		do {
+			used [ j0 ] = true ;
+			int i0 = p [ j0 ] ,  delta = INF,  j1 ;
+			for ( int j = 1 ; j <= m ; ++ j )
+				if ( ! used [ j ] ) {
+					int cur = a [ i0 ] [ j ] - u [ i0 ] - v [ j ] ;
+					if ( cur < minv [ j ] )
+						minv [ j ] = cur,  way [ j ] = j0 ;
+					if ( minv [ j ] < delta )
+						delta = minv [ j ] ,  j1 = j ;
+				}
+			for ( int j = 0 ; j <= m ; ++ j )
+				if ( used [ j ] )
+					u [ p [ j ] ] += delta,  v [ j ] -= delta ;
+				else
+					minv [ j ] -= delta ;
+			j0 = j1 ;
+		} while ( p [ j0 ] != 0 ) ;
+		do {
+			int j1 = way [ j0 ] ;
+			p [ j0 ] = p [ j1 ] ;
+			j0 = j1 ;
+		} while ( j0 ) ;
+	}
+
+	//vector < int > ans ( n + 1 ) ;
+	// in ans is the matching (row->column). (also in p, but column->row) // 1<=row<=n, 1<=column<=m
+	for ( int j = 1 ; j <= m ; ++ j )
+		ans [ p [ j ] ] = j ;
+
+
+	int cost = - v [ 0 ] ;
+	return cost; // min (or max) cost of the matching.
+	// total matching is min(n,m);
 }
