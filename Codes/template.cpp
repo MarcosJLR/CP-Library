@@ -17,8 +17,8 @@ typedef pair<int,int> ii;
 typedef vector<int> vi;
 typedef vector<ii> vii;
 
-#define FOR(i,n,m) for(int i=n; i<m; i++)
-#define ROF(i,n,m) for(int i=n; i>m; i--)
+#define FOR(i,n,m) for(int i=n; i<(int)m; i++)
+#define ROF(i,n,m) for(int i=n; i>(int)m; i--)
 #define pb push_back
 #define lb lower_bound
 #define ub upper_bound

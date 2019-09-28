@@ -6,8 +6,10 @@ struct STN{
         if(l) sum += l->sum;
         if(r) sum += r->sum;
     }
-}
+};
+
 int N, int A[MAXN];
+
 STN* STB(int l = 0, int r = N){
     if(r - l < 2) return new STN(A[l]);
     int m = (l+r)>>1;
