@@ -63,7 +63,9 @@
    - Flow
       - Max Flow
       - Max Flow-Min Cost
-   - Bipartite matching 
+   - Bipartite matching
+      - Hungarian Algorithm
+            - [Getting Confidence](https://codeforces.com/gym/102346/problem/G) :-1: :+1: :-1:
    - Trees
       - MST
       - LCA
