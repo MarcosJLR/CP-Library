@@ -28,7 +28,7 @@ void STU(int p, int x, int id = 1, int l = 0, int r = N){
         return;
     }
     int m = (l+r)>>1, L = id<<1, R = L|1;
-    if(p > m) STU(p, x, L, l, m);
+    if(p < m) STU(p, x, L, l, m);
     else STU(p, x, R, m, r);
     ST[id].merge(ST[L], ST[R]);
 }
