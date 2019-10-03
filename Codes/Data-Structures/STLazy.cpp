@@ -2,10 +2,10 @@
 int N, A[MAXN];
 struct STN{
     void merge(STN& L, STN& R) {}
-    void operator=(int a) {}
+    void operator=(ll a) {}
 };
 STN ST[4*MAXN];
-int lzy[4*MAXN];
+ll lzy[4*MAXN];
 void STB(int id = 1, int l = 0, int r = N){
     if(r - l < 2){
         ST[id] = A[l];
@@ -15,10 +15,12 @@ void STB(int id = 1, int l = 0, int r = N){
     STB(L, l, m); STB(R, m, r);
     ST[id].merge(ST[L], ST[R]);
 }
-void upd(int id, int l, int r, int x){
+// Actualiza el nodo y guarda en lazy
+void upd(int id, int l, int r, ll x){
     lzy[id] += x;
-    ST[id] += (r - l)*x;
+    ST[id].val += (r - l)*x;
 }
+// Propaga el update en lazy
 void shift(int id, int l, int r){
     int m = (l+r)>>1, L = id<<1, R = L|1;
     upd(L, l, m, lzy[id]);
