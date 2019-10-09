@@ -70,6 +70,8 @@
       - MST
       - LCA
       - HLD
+      - DSU on trees
+       - [Lomsat gelral](https://codeforces.com/contest/600/problem/E) :-1: :+1: :-1:
     - Centroid Decomposition
        - [Xenia and Tree](https://codeforces.com/contest/342/problem/E) :-1: :+1: :-1:
        - [Query on a tree V](https://www.spoj.com/problems/QTREE5/) :-1: :+1: :-1:
