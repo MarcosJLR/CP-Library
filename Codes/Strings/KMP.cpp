@@ -16,7 +16,7 @@ vi KMP(string &s, string &t){
 	int n = s.length();
 	int m = t.length();
 	int j = 0;
-	vi P = preff(s), ans;
+	vi P = preff(t), ans;
 	FOR(i,0,n){
 		while(j>0 && s[i]!=t[j]) j = P[j-1];
 		j += s[i] == t[j];
