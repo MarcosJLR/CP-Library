@@ -1,11 +1,9 @@
 000 //Contenedor que puede agregar lineas mx + b y preguntar max x
-000 
 839 struct Line{
 708     mutable ll m, b, p;
 405     bool operator<(const Line& o) const { return m < o.m; }
 862     bool operator<(ll x) const { return p < x; }
 959 };
-959 
 777 struct LineContainer : multiset<Line, less<>> {
 082     const ll inf = LLONG_MAX;
 082     // (para doubles usar inf = 1/.0, div(a, b) = a / b;)

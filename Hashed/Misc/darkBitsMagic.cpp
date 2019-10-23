@@ -5,10 +5,8 @@
 477 }
 477 // Iterar sobre todos las mascaras de tamano N con m bits prendidos
 660 for(uint mask = (1<<m)-1; !(mask & (1<<N)); mask = nextMask(mask)){}
-660 
 660 //Iterar sobre todas las submascaras de mask de forma creciente (no incluye vacio)
 880 for(uint s = 0 ; s = s - mask & mask ;) {}
-880 
 880 //Iterar sobre todas las submascaras de mask de forma decreciente (no incluye vacio)
 049 for(uint s = (mask-1) & mask ; s; s = (s-1) & mask )  {
 794355049

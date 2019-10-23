@@ -1,7 +1,4 @@
-000 
 000 // El codigo es una guia, depende mucho del problema
-000 
-000 
 000 // La raiz es el nodo 0, trie[u][c] apunta al hijo de u que
 000 // representa el caracter c (c+'a')
 632 #define MAXN         // maxima cantidad de nodos en el trie
@@ -16,7 +13,6 @@
 280 		u = trie[u][c];
 547 	}
 775 }
-775 
 031 int main(){
 559 	ms(trie,-1);
 880 	TN = 1;

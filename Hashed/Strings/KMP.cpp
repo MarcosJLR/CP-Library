@@ -1,5 +1,4 @@
 000 // String matching KMP-Algorithm
-000 
 247 vi preff(string &s){
 026 	int n = s.length();
 793 	vi P(n);
@@ -11,7 +10,6 @@
 075 	}
 072 	return P;
 277 }
-277 
 743 vi KMP(string &s, string &t){
 551 	int n = s.length();
 409 	int m = t.length();

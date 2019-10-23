@@ -11,7 +11,6 @@
 513 		if(p != u) dfs_pre_LCA(u,v);
 603 	}
 944 }
-944 
 944 //Query:
 731 int LCA(int u,int v){
 328 	if(H[v] < H[u]) swap(v,u);

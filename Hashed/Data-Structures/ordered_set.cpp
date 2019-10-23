@@ -1,12 +1,10 @@
 605 #include <bits/stdc++.h>
 088 #include <ext/pb_ds/assoc_container.hpp>
 807 #include <ext/pb_ds/tree_policy.hpp> //aparentemente no es necesario
-807 
 235 using namespace __gnu_pbds;
 494 using namespace std;
 564 template <typename T>
 994 using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
-994 
 318 int main(){
 580 	ordered_set<int> s;
 817 	s.insert(x); 

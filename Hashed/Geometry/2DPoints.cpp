@@ -4,27 +4,21 @@
 426 #define y imag() 
 200 #define mkt make_tuple
 758 const double PI = 2*acos(0.0);
-758 
-758 
 531 int sgn(T a) {return (a < 0) - (a > 0);}
 342 T sq(pt p) {return p.x*p.x + p.y*p.y;}
 472 double abs(pt p) {return sqrt(sq(p));}
-472 
 472 // Transformations
 099 pt translate(pt v, pt p) {return p+v;} //Move p through v
 682 pt scale(pt c, double fact, pt p) {return c + (p - c)*fact;}
 906 pt rot(pt p, double a) {return p * polar(1.0, a);}
 600 pt perp(pt p) {return {-p.y, p.x};}
-600 
 600 // Arbitrary linear Transformation f given f(p) and f(q)
 451 pt linearTransfo(pt p, pt q, pt r, pt fp, pt fq){
 189     return fp + (r-p) * (fq-fp) / (q-p);
 530 }
-530 
 530 // Products
 402 T dot(pt v, pt w) {return (conj(v)*w).x;}
 034 T cross(pt v, pt w) {return (conj(v)*w).y;}
-034 
 034 // Orientation
 646 bool isPerp(pt v, pt w) {return dot(v, w) == 0;}
 249 double angle(pt v, pt w){ // Range [0, pi]
@@ -52,7 +46,6 @@
 473     }
 776     return !(hasPos && hasNeg);
 052 }
-052 
 052 // Polar Sort
 102 bool half(pt p){
 262     assert(p.x != 0 || p.y != 0);

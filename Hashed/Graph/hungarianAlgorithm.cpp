@@ -6,18 +6,13 @@
 000 // indexed from 1 to n.
 000 //
 000 // implementation by Andrei Lopatin.
-000 
 000 // que pasa si no se puede hacer matching maximo? se jode todo? hay que usar min_cost_flow supongo 
-000 
 530 int n,m;
 585 vector < int >  ans(MAXN); //ans( n + 1 ) ;
 077 int a[MAXN][MAXN]; //input matrix
-077 
 643 int hungarian(){
-643 
 643 	// u and v are potentials (solution is a upper bound of sum of potentials)
 696 	vector < int > u ( n + 1 ) , v ( m + 1 ) , p ( m + 1 ) , way ( m + 1 ) ;
-696 
 696 	//main algorithm loop - O(n^3)/O(n^2*m)
 834 	for ( int i = 1 ; i <= n ; ++ i ) {
 163 		p [ 0 ] = i ;
@@ -48,13 +43,10 @@
 998 			j0 = j1 ;
 645 		} while ( j0 ) ;
 168 	}
-168 
 168 	//vector < int > ans ( n + 1 ) ;
 168 	// in ans is the matching (row->column). (also in p, but column->row) // 1<=row<=n, 1<=column<=m
 302 	for ( int j = 1 ; j <= m ; ++ j )
 896 		ans [ p [ j ] ] = j ;
-896 
-896 
 691 	int cost = - v [ 0 ] ;
 497 	return cost; // min (or max) cost of the matching.
 497 	// total matching is min(n,m);

@@ -9,7 +9,6 @@
 823         }
 908 }
 908 //Must get size before running the dfs
-908 
 337 vi *vec[MAXN];
 070 int cnt[MAXN];
 670 void dfs(int v, int p, bool keep){

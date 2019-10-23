@@ -1,18 +1,13 @@
 945 #include <complex>
-945 
 945 // Se cambia T dependiendo del caso
 968 typedef ll T;
 620 typedef complex<T> pt;
-620 
 737 #define x real
 484 #define y imag
-484 
 315 T dot(pt v, pt w) { return (conj(v)*w).x(); }
 422 T f(pt l, T x) { return dot(l, {x, 1}); }
-422 
 422 // Maximum value a query can have
 514 const int MAXQ = 2e5+5;
-514 
 514 // Init en {0, INF}
 607 pt LCT[4*MAXQ];
 078 void add(pt nw, int id = 1, int l = 0, int r = MAXQ){
@@ -26,7 +21,6 @@
 522     if(lef != mid) add(nw, L, l, m);
 210     else add(nw, R, m, r);
 427 }
-427 
 427 // Retorna el minimo mx + b
 427 // Para el maximo insertar {-m, -b} y hacer -get(x)
 026 T get(int x, int id = 1, int l = 0, int r = MAXQ){

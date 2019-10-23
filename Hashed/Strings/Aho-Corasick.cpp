@@ -1,5 +1,4 @@
 462 const int MAXAL = 26; // Size of alphabet
-462 
 336 struct node{
 115 	node* nxt[MAXAL]; // Array of pointers to childs on trie
 659 	bool end; // 1 if cur node is end node or a sufix parent is end node
@@ -12,11 +11,9 @@
 462 		ms(nxt, 0);
 119 	}
 851 };
-851 
 851 // Root of trie
 092 typedef node* trie;
 328 trie root = new node();
-328 
 328 // Be careful with repeated patterns
 860 void add(trie root, const string& s, int k){
 211 	trie t = root;
@@ -35,7 +32,6 @@
 888 		}
 258 	}
 738 }
-738 
 080 void buildLinks(trie root){
 120 	queue<trie> q;
 643 	q.push(root);
@@ -52,9 +48,7 @@
 163 		FOR(c, 0, MAXAL) if(t->nxt[c]) q.push(t->nxt[c]); 
 903 	}
 643 }
-643 
 643 // One of the next to should be used
-643 
 696 set<int> subString(trie root, string& T){
 776 	int n = T.size();
 128 	trie x = root;
@@ -72,7 +66,6 @@
 984 	}
 439 	return ans;
 440 }
-440 
 868 bool check(trie root, string &T){
 757 	int n = T.size();
 174 	trie x = root;
@@ -85,9 +78,7 @@
 404 	}
 506 	return false;
 497 }
-497 
 497 ////////////////////////////////////////////////////////////////////////////////////
-497 
 497 // Primer ocurrencia del final de un string
 497 // Calcular todas y ver cual es mejor si 
 497 // se necesita la primera

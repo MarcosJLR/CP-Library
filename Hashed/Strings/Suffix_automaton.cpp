@@ -2,11 +2,9 @@
 258 	int len, link;
 539 	int mp[26]; // Be careful with size of alphabet
 944 };
-944 
 500 const int MAXLEN = 100000;
 624 state SA[MAXLEN*2];
 558 int SAN, last;
-558 
 656 void SA_build(string S){
 689 	last = SA[0].len = 0;
 120 	SA[0].link = -1;
@@ -37,11 +35,8 @@
 210 		last = v;
 273 	}
 738 }
-738 
 470 /* 
-470 
 230 Prints suffix automaton transitions and suffix links
-230 
 862 int main(){
 178 	string S; cin>>S;
 061 	SA_build(S);
@@ -58,6 +53,5 @@
 058 	printf("##\n\n");
 058 	//##################################
 696 }
-696 
 988 *
 -1856743012

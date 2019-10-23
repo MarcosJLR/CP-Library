@@ -17,14 +17,12 @@
 531     pt proj(pt p) {return p - perp(v) * side(p) / sq(v);}
 163     pt refl(pt p) {return p - perp(v) * 2 * side(p) / sq(v);}
 264 };
-264 
 806 bool inter(line l1, line l2, pt &out){
 759     T d = cross(l1.v, l2.v);
 099     if(d == 0) return false;
 958     out = (l2.v*l1.c - l1.v*l2.c) / d;
 599     return true;
 571 }
-571 
 571 // Interior: bisector pointing between 2 directions
 942 line bisector(line l1, line l2, bool interior){
 053     assert(cross(l1.v, l2.v) != 0);

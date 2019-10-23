@@ -31,8 +31,6 @@
 560 	}
 538 	return true;
 346 }
-346 
-346 
 267 double det(double *m[], int n) {
 489 	if (n==2)
 823 		return m[0][0]*m[1][1]-m[0][1]*m[1][0];
@@ -52,7 +50,6 @@
 083 	}
 339 	return deter;
 930 }
-930 
 930 // Gauss Jordan para un vector especifico, sabiendo que el sistema
 930 // tiene solucion unica con mas filas que columnas (mas ecuaciones 
 930 // que variables)

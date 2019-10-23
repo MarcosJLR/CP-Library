@@ -1,12 +1,8 @@
 000 //------------------------------------TARJAN SCC------------------------------------
-000 
-000 
 964 vi G[MAXN];
 806 int N;
-806 
 167 int SCCI[MAXN], SCCN;
 591 vector<vi> SCC;
-591 
 647 int td[MAXN], low[MAXN], dfst;
 441 bool onStk[MAXN];
 367 stack<int> stk;
@@ -21,7 +17,6 @@
 239 		if(onStk[v])
 703 			low[u]=min(low[u],low[v]);
 247 	}
-247 
 601 	if(low[u]==td[u]){
 246 		int x = SCC.size();
 441 		SCC.pb(vi());
@@ -34,7 +29,6 @@
 136 		SCCN++;
 219 	}
 987 }
-987 
 727 void findSCCs(){
 407 	ms(onStk,false);
 930 	ms(td,-1);
@@ -47,17 +41,11 @@
 853 		if(td[u]==-1)
 344 			tarj(u);
 641 }
-641 
 641 //------------------------------------TARJAN BCC------------------------------------
-641 
-641 
-641 
 657 vector<edge> G[MAXN], E;
 481 int N;
-481 
 242 vector<vi> BCC;
 384 vi bridges, a_pts;
-384 
 975 stack<int> stk;
 365 int td[MAXN], low[MAXN];
 051 void tarj(int v, int p){
@@ -87,7 +75,6 @@
 405 	//non-root nodes
 790 	if(td[v]!=0 && is_a_pt) a_pts.pb(v);
 229 }
-229 
 307 void findBCCs(){
 141 	BCC.clear(), bridges.clear(), a_pts.clear();
 872 	ms(td,-1);

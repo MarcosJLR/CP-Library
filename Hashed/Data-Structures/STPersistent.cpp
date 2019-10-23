@@ -7,9 +7,7 @@
 635         if(r) val += r->val;
 413     }
 066 };
-066 
 044 int N, A[MAXN];
-044 
 057 STN* STB(int l = 0, int r = N){
 907     if(r - l < 2) return new STN(A[l]);
 294     int m = (l+r)>>1;
