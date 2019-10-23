@@ -1,10 +1,10 @@
-711 double f(double x){	}
-711 //simpsons rule
-039 double integral(double a, double b){
-918 	int n = 10000; //PAR
-248 	double I = f(a) + f(b), h = (b-a)/n;
-424 	FOR(i,0,n)
-507 		I += ((i&1) ? 2:4) * f(a + h*i); 
-121 	return I * h/3;
-458 
--79252181393109542
+405 double f(double x){	}
+405 //simpsons rule
+619 double integral(double a, double b){
+259 	int n = 10000; //PAR
+488 	double I = f(a) + f(b), h = (b-a)/n;
+854 	FOR(i,0,n)
+749 		I += ((i&1) ? 2:4) * f(a + h*i); 
+474 	return I * h/3;
+216 
+-2141456784

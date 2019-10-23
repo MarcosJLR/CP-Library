@@ -9,54 +9,54 @@
 000 
 000 // que pasa si no se puede hacer matching maximo? se jode todo? hay que usar min_cost_flow supongo 
 000 
-744 int n,m;
-491 vector < int >  ans(MAXN); //ans( n + 1 ) ;
-060 int a[MAXN][MAXN]; //input matrix
-060 
-454 int hungarian(){
-454 
-454 	// u and v are potentials (solution is a upper bound of sum of potentials)
-118 	vector < int > u ( n + 1 ) , v ( m + 1 ) , p ( m + 1 ) , way ( m + 1 ) ;
-118 
-118 	//main algorithm loop - O(n^3)/O(n^2*m)
-818 	for ( int i = 1 ; i <= n ; ++ i ) {
-350 		p [ 0 ] = i ;
-204 		int j0 = 0 ;
-964 		vector < int > minv ( m + 1 , INF ) ;
-327 		vector < char > used ( m + 1 , false ) ;
-735 		do {
-904 			used [ j0 ] = true ;
-043 			int i0 = p [ j0 ] ,  delta = INF,  j1 ;
-139 			for ( int j = 1 ; j <= m ; ++ j )
-761 				if ( ! used [ j ] ) {
-096 					int cur = a [ i0 ] [ j ] - u [ i0 ] - v [ j ] ;
-324 					if ( cur < minv [ j ] )
-714 						minv [ j ] = cur,  way [ j ] = j0 ;
-734 					if ( minv [ j ] < delta )
-434 						delta = minv [ j ] ,  j1 = j ;
-724 				}
-504 			for ( int j = 0 ; j <= m ; ++ j )
-082 				if ( used [ j ] )
-382 					u [ p [ j ] ] += delta,  v [ j ] -= delta ;
-890 				else
-485 					minv [ j ] -= delta ;
-087 			j0 = j1 ;
-711 		} while ( p [ j0 ] != 0 ) ;
-291 		do {
-297 			int j1 = way [ j0 ] ;
-402 			p [ j0 ] = p [ j1 ] ;
-162 			j0 = j1 ;
-727 		} while ( j0 ) ;
-368 	}
-368 
-368 	//vector < int > ans ( n + 1 ) ;
-368 	// in ans is the matching (row->column). (also in p, but column->row) // 1<=row<=n, 1<=column<=m
-394 	for ( int j = 1 ; j <= m ; ++ j )
-977 		ans [ p [ j ] ] = j ;
-977 
-977 
-941 	int cost = - v [ 0 ] ;
-770 	return cost; // min (or max) cost of the matching.
-770 	// total matching is min(n,m);
-015 
--4835296731289284985
+530 int n,m;
+585 vector < int >  ans(MAXN); //ans( n + 1 ) ;
+077 int a[MAXN][MAXN]; //input matrix
+077 
+643 int hungarian(){
+643 
+643 	// u and v are potentials (solution is a upper bound of sum of potentials)
+696 	vector < int > u ( n + 1 ) , v ( m + 1 ) , p ( m + 1 ) , way ( m + 1 ) ;
+696 
+696 	//main algorithm loop - O(n^3)/O(n^2*m)
+834 	for ( int i = 1 ; i <= n ; ++ i ) {
+163 		p [ 0 ] = i ;
+480 		int j0 = 0 ;
+628 		vector < int > minv ( m + 1 , INF ) ;
+573 		vector < char > used ( m + 1 , false ) ;
+968 		do {
+624 			used [ j0 ] = true ;
+000 			int i0 = p [ j0 ] ,  delta = INF,  j1 ;
+051 			for ( int j = 1 ; j <= m ; ++ j )
+987 				if ( ! used [ j ] ) {
+973 					int cur = a [ i0 ] [ j ] - u [ i0 ] - v [ j ] ;
+410 					if ( cur < minv [ j ] )
+760 						minv [ j ] = cur,  way [ j ] = j0 ;
+121 					if ( minv [ j ] < delta )
+505 						delta = minv [ j ] ,  j1 = j ;
+967 				}
+518 			for ( int j = 0 ; j <= m ; ++ j )
+668 				if ( used [ j ] )
+103 					u [ p [ j ] ] += delta,  v [ j ] -= delta ;
+178 				else
+058 					minv [ j ] -= delta ;
+777 			j0 = j1 ;
+972 		} while ( p [ j0 ] != 0 ) ;
+782 		do {
+645 			int j1 = way [ j0 ] ;
+274 			p [ j0 ] = p [ j1 ] ;
+998 			j0 = j1 ;
+645 		} while ( j0 ) ;
+168 	}
+168 
+168 	//vector < int > ans ( n + 1 ) ;
+168 	// in ans is the matching (row->column). (also in p, but column->row) // 1<=row<=n, 1<=column<=m
+302 	for ( int j = 1 ; j <= m ; ++ j )
+896 		ans [ p [ j ] ] = j ;
+896 
+896 
+691 	int cost = - v [ 0 ] ;
+497 	return cost; // min (or max) cost of the matching.
+497 	// total matching is min(n,m);
+202 
+1418937202

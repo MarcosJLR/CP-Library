@@ -1,12 +1,12 @@
-559 ll BIT[MAXN];
-363 void updBIT(int p, ll val){
-065     p++;
-021     for(; p < MAXN; p += p&-p) BIT[p] += val;
-174 }
-186 ll sumBIT(int p){
-197     p++;
-078     ll ret = 0;
-376     for(; p; p -= p&-p) ret += BIT[p];
-732     return ret;
-308 }
-4700934216831523308
+628 ll BIT[MAXN];
+114 void updBIT(int p, ll val){
+366     p++;
+615     for(; p < MAXN; p += p&-p) BIT[p] += val;
+315 }
+959 ll sumBIT(int p){
+665     p++;
+307     ll ret = 0;
+344     for(; p; p -= p&-p) ret += BIT[p];
+009     return ret;
+295 }
+1408559295

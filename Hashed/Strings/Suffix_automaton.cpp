@@ -1,63 +1,63 @@
-587 struct state{
-009 	int len, link;
-123 	int mp[26]; // Be careful with size of alphabet
-400 };
-400 
-421 const int MAXLEN = 100000;
-945 state SA[MAXLEN*2];
-070 int SAN, last;
-070 
-391 void SA_build(string S){
-547 	last = SA[0].len = 0;
-026 	SA[0].link = -1;
-335 	ms(SA[0].mp, 0);
-420 	SAN = 1;
-416 	for(auto C : S){
-782 		int c=C-'a', v = SAN++, p=last; // Be careful with mapping char to int
-526 		ms(SA[v].mp, 0);
-926 		SA[v].len = SA[last].len+1;  
-677 		for(;p>-1 && !SA[p].mp[c]; p=SA[p].link)
-772 			SA[p].mp[c]=v;
-808 		if(p == -1){
-457 			SA[v].link = 0;
-808 		}else{
-544 			int q=SA[p].mp[c];
-508 			if(SA[p].len+1 == SA[q].len){
-068 				SA[v].link = q;
-952 			}else{
-676 				int qq = SAN++;
-725 				SA[qq].len = SA[p].len+1;
-461 				memcpy(SA[qq].mp, SA[q].mp, sizeof(SA[qq].mp));
-862 				SA[qq].link = SA[q].link;
-675 				SA[v].link = SA[q].link = qq;
-648 				for(;p>-1 && SA[p].mp[c] == q; p=SA[p].link)
-316 					SA[p].mp[c] = qq;
-247 			}
-755 		}
-495 		last = v;
-903 	}
-002 }
-002 
-170 /* 
-170 
-598 Prints suffix automaton transitions and suffix links
-598 
-231 int main(){
-564 	string S; cin>>S;
-110 	SA_build(S);
-110 	//##################################
-352 	FOR(i,0,SAN){
-178 		printf("%d:\n",i);
-184 		FOR(it,0,26) if(SA[i].mp[it])
-213 			printf("  %c -> %d\n",it+'a',SA[i].mp[it]);
-722 	}
-792 	printf("\n");
-502 	FOR(i,0,SAN){
-553 		printf("%d   %d\n",i,SA[i].link);
-517 	}
-644 	printf("##\n\n");
-644 	//##################################
-608 }
-608 
-716 *
-797451348045294716
+768 struct state{
+258 	int len, link;
+539 	int mp[26]; // Be careful with size of alphabet
+944 };
+944 
+500 const int MAXLEN = 100000;
+624 state SA[MAXLEN*2];
+558 int SAN, last;
+558 
+656 void SA_build(string S){
+689 	last = SA[0].len = 0;
+120 	SA[0].link = -1;
+604 	ms(SA[0].mp, 0);
+918 	SAN = 1;
+652 	for(auto C : S){
+381 		int c=C-'a', v = SAN++, p=last; // Be careful with mapping char to int
+062 		ms(SA[v].mp, 0);
+733 		SA[v].len = SA[last].len+1;  
+490 		for(;p>-1 && !SA[p].mp[c]; p=SA[p].link)
+667 			SA[p].mp[c]=v;
+240 		if(p == -1){
+346 			SA[v].link = 0;
+805 		}else{
+982 			int q=SA[p].mp[c];
+990 			if(SA[p].len+1 == SA[q].len){
+470 				SA[v].link = q;
+271 			}else{
+836 				int qq = SAN++;
+496 				SA[qq].len = SA[p].len+1;
+554 				memcpy(SA[qq].mp, SA[q].mp, sizeof(SA[qq].mp));
+893 				SA[qq].link = SA[q].link;
+549 				SA[v].link = SA[q].link = qq;
+010 				for(;p>-1 && SA[p].mp[c] == q; p=SA[p].link)
+924 					SA[p].mp[c] = qq;
+604 			}
+546 		}
+210 		last = v;
+273 	}
+738 }
+738 
+470 /* 
+470 
+230 Prints suffix automaton transitions and suffix links
+230 
+862 int main(){
+178 	string S; cin>>S;
+061 	SA_build(S);
+061 	//##################################
+951 	FOR(i,0,SAN){
+430 		printf("%d:\n",i);
+031 		FOR(it,0,26) if(SA[i].mp[it])
+805 			printf("  %c -> %d\n",it+'a',SA[i].mp[it]);
+341 	}
+680 	printf("\n");
+778 	FOR(i,0,SAN){
+593 		printf("%d   %d\n",i,SA[i].link);
+970 	}
+058 	printf("##\n\n");
+058 	//##################################
+696 }
+696 
+988 *
+-1856743012

@@ -1,103 +1,103 @@
 000 //------------------------------------TARJAN SCC------------------------------------
 000 
 000 
-731 vi G[MAXN];
-842 int N;
-842 
-418 int SCCI[MAXN], SCCN;
-667 vector<vi> SCC;
-667 
-075 int td[MAXN], low[MAXN], dfst;
-083 bool onStk[MAXN];
-930 stack<int> stk;
-171 void tarj(int u){
-763 	low[u]=td[u]=dfst++;
-803 	stk.push(u);
-813 	onStk[u]=true;
-199 	FOR(i,0,G[u].size()){
-463 		int v=G[u][i];
-557 		if(td[v]==-1)
-135 			tarj(v);
-519 		if(onStk[v])
-444 			low[u]=min(low[u],low[v]);
-144 	}
-144 
-921 	if(low[u]==td[u]){
-309 		int x = SCC.size();
-191 		SCC.pb(vi());
-584 		while(true){
-246 			int v=stk.top(); stk.pop(); onStk[v]=false;
-466 			SCCI[v]=SCCN;
-375 			SCC[x].pb(v);
-754 			if(u==v) break;
-298 		}
-165 		SCCN++;
-761 	}
-171 }
-171 
-118 void findSCCs(){
-691 	ms(onStk,false);
-060 	ms(td,-1);
-595 	ms(low,0);
-480 	ms(SCCI, -1);
-140 	dfst=0;
-519 	SCCN=0;
-154 	SCC.clear();
-867 	FOR(u,0,N)
-807 		if(td[u]==-1)
-030 			tarj(u);
-594 }
-594 
-594 //------------------------------------TARJAN BCC------------------------------------
-594 
-594 
-594 
-619 vector<edge> G[MAXN], E;
-245 int N;
-245 
-392 vector<vi> BCC;
-744 vi bridges, a_pts;
-744 
-172 stack<int> stk;
-199 int td[MAXN], low[MAXN];
-314 void tarj(int v, int p){
-780 	low[v] = td[v];
-123 	bool is_a_pt = false;
-810 	FOR(i,0,G[v].size()){
-070 		int u=G[v][i].to, id=G[v][i].id;
-460 		if(u==p || td[u] > td[v]) continue;
-775 		stk.push(id);
-168 		if(td[u]==-1){
-261 			td[u] = td[v]+1;
-638 			tarj(u,v);
-504 			low[v] = min(low[v],low[u]);
-969 			if(low[u] >= td[v]){ //v is an articulation point
-089 				is_a_pt = true;
-239 				int e=-1, x=BCC.size();
-238 				BCC.pb(vi());
-034 				while(e!=id){
-797 					e=stk.top(); stk.pop();
-170 					BCC[x].pb(e);
-429 				}
-431 			}
-823 			if(low[u]==td[u]) //v - u is a bridge
-306 				bridges.pb(id);
-608 		}else low[v] = min(low[v],td[u]);
-597 	}
-597 	//non-root nodes
-534 	if(td[v]!=0 && is_a_pt) a_pts.pb(v);
-474 }
-474 
-493 void findBCCs(){
-668 	BCC.clear(), bridges.clear(), a_pts.clear();
-016 	ms(td,-1);
-669 	stk = stack<int>();
-378 	FOR(v,0,N) if(td[v]==-1){
-634 		td[v] = 0, tarj(v,-1);
-576 		int cnt = 0;
-491 		FOR(i,0,G[v].size() && cnt<2)
-341 			if(td[G[v][i].to]==1) cnt++;
-083 		if(cnt > 1) a_pts.pb(v);
-562 	}
-092 }
-7144813784199092092
+964 vi G[MAXN];
+806 int N;
+806 
+167 int SCCI[MAXN], SCCN;
+591 vector<vi> SCC;
+591 
+647 int td[MAXN], low[MAXN], dfst;
+441 bool onStk[MAXN];
+367 stack<int> stk;
+014 void tarj(int u){
+555 	low[u]=td[u]=dfst++;
+406 	stk.push(u);
+924 	onStk[u]=true;
+540 	FOR(i,0,G[u].size()){
+101 		int v=G[u][i];
+138 		if(td[v]==-1)
+960 			tarj(v);
+239 		if(onStk[v])
+703 			low[u]=min(low[u],low[v]);
+247 	}
+247 
+601 	if(low[u]==td[u]){
+246 		int x = SCC.size();
+441 		SCC.pb(vi());
+022 		while(true){
+311 			int v=stk.top(); stk.pop(); onStk[v]=false;
+782 			SCCI[v]=SCCN;
+995 			SCC[x].pb(v);
+144 			if(u==v) break;
+514 		}
+136 		SCCN++;
+219 	}
+987 }
+987 
+727 void findSCCs(){
+407 	ms(onStk,false);
+930 	ms(td,-1);
+472 	ms(low,0);
+615 	ms(SCCI, -1);
+431 	dfst=0;
+167 	SCCN=0;
+467 	SCC.clear();
+909 	FOR(u,0,N)
+853 		if(td[u]==-1)
+344 			tarj(u);
+641 }
+641 
+641 //------------------------------------TARJAN BCC------------------------------------
+641 
+641 
+641 
+657 vector<edge> G[MAXN], E;
+481 int N;
+481 
+242 vector<vi> BCC;
+384 vi bridges, a_pts;
+384 
+975 stack<int> stk;
+365 int td[MAXN], low[MAXN];
+051 void tarj(int v, int p){
+602 	low[v] = td[v];
+756 	bool is_a_pt = false;
+522 	FOR(i,0,G[v].size()){
+583 		int u=G[v][i].to, id=G[v][i].id;
+310 		if(u==p || td[u] > td[v]) continue;
+395 		stk.push(id);
+010 		if(td[u]==-1){
+965 			td[u] = td[v]+1;
+524 			tarj(u,v);
+144 			low[v] = min(low[v],low[u]);
+500 			if(low[u] >= td[v]){ //v is an articulation point
+178 				is_a_pt = true;
+024 				int e=-1, x=BCC.size();
+175 				BCC.pb(vi());
+237 				while(e!=id){
+450 					e=stk.top(); stk.pop();
+964 					BCC[x].pb(e);
+366 				}
+562 			}
+848 			if(low[u]==td[u]) //v - u is a bridge
+273 				bridges.pb(id);
+697 		}else low[v] = min(low[v],td[u]);
+405 	}
+405 	//non-root nodes
+790 	if(td[v]!=0 && is_a_pt) a_pts.pb(v);
+229 }
+229 
+307 void findBCCs(){
+141 	BCC.clear(), bridges.clear(), a_pts.clear();
+872 	ms(td,-1);
+747 	stk = stack<int>();
+133 	FOR(v,0,N) if(td[v]==-1){
+259 		td[v] = 0, tarj(v,-1);
+344 		int cnt = 0;
+819 		FOR(i,0,G[v].size() && cnt<2)
+806 			if(td[G[v][i].to]==1) cnt++;
+307 		if(cnt > 1) a_pts.pb(v);
+922 	}
+270 }
+92031270
